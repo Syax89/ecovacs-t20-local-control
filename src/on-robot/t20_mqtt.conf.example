@@ -1,0 +1,11 @@
+# Copiare sul robot come /data/t20_mqtt.conf (una riga key=val). Override dei default.
+host=192.168.1.10
+port=1883
+user=CHANGEME
+pass=CHANGEME
+did=00000000-0000-0000-0000-000000000000
+name=Deebot T20 Omni
+poll=10
+# Codici errore da NON considerare "Problema" (es. avvisi permanenti noti), separati da virgola.
+# I sensori Errore/Errore stazione li mostrano comunque. Es.: ignore_errors=314
+ignore_errors=

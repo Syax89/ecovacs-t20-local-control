@@ -1,0 +1,16 @@
+# Renderer mappa T20 -> camera Home Assistant.
+# Avvio:  docker compose up -d --build
+# Se host MQTT/credenziali/DID differiscono, modifica il blocco "command".
+services:
+  t20-map-render:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: t20-map-render
+    container_name: t20-map-render
+    restart: unless-stopped
+    command: >
+      --host 192.168.1.10 --port 1883
+      --user CHANGEME --pass CHANGEME
+      --did 00000000-0000-0000-0000-000000000000
+      --name "Deebot T20 Omni" --scale 4

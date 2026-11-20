@@ -1,0 +1,12 @@
+[Unit]
+Description=T20 map renderer (MQTT -> Home Assistant camera)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/opt/t20-map/venv/bin/python /opt/t20-map/t20_map_render.py --host 192.168.1.10 --user CHANGEME --pass CHANGEME --did 00000000-0000-0000-0000-000000000000 --name "Deebot T20 Omni" --scale 4
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

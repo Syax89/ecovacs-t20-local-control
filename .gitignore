@@ -1,0 +1,49 @@
+# --- never commit device-specific secrets or captured data ---
+# TLS material (generate your own, see src/local-cloud/README.md)
+*.key
+*.crt
+*.pem
+mirror.*
+
+# SSH keys
+id_*
+*_rsa
+*_ed25519
+robot_access*
+host_rsa*
+*.pub
+
+# firmware images & decrypted sections (NOT redistributed)
+*.bin
+*.img
+firmware/
+sections/
+*.tar.gz
+*.tgz
+
+# captures / logs / runtime state
+*.log
+*.pcap
+*_capture.txt
+mqtt_full.log
+telemetry.json
+*.session.json
+.session.json
+.device_id
+fw_resp.json
+
+# rendered maps / personal artefacts
+*.png
+!assets/*.png          # curated, redacted illustrations only
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# os
+.DS_Store
+
+# wiki staging (pushed to the separate .wiki.git remote, not this repo)
+.wiki/
